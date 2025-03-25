@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #6a41f5;
+  --secondary: #ff3e79;
+  --bg-dark: #111827;
+  --card-bg: #1f2937;
+  --text-primary: #ffffff;
+  --text-secondary: #9ca3af;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+}
+
+.game-card {
+  @apply relative overflow-hidden rounded-xl transition-transform duration-300 hover:scale-105;
+  background: linear-gradient(to bottom, rgba(31, 41, 55, 0.5), rgba(31, 41, 55, 0.9));
+}
+
+.game-card img {
+  @apply w-full h-auto object-cover;
+}
+
+.game-card .overlay {
+  @apply absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-3;
+}
+
+.carousel-container .swiper-pagination-bullet {
+  @apply bg-white opacity-50;
+}
+
+.carousel-container .swiper-pagination-bullet-active {
+  @apply bg-primary opacity-100;
+}
+
+.main-nav-item.active {
+  @apply bg-primary/20 text-primary;
+}
+
+.mobile-nav-item.active {
+  @apply text-primary;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-primary/90 text-white font-medium py-2 px-4 rounded-lg transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary hover:bg-secondary/90 text-white font-medium py-2 px-4 rounded-lg transition-colors;
+  }
+  
+  .section-title {
+    @apply text-xl md:text-2xl font-bold mb-4 flex items-center;
+  }
+}
